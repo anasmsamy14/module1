@@ -1,6 +1,6 @@
 import math
 
-number = 50
+number = ()
 num = int(input("enter a number ; "))
 sqrt_result = math.sqrt(number)
 print(sqrt_result)
