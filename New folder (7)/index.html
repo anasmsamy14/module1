@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="title">Friendship Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Language Selector -->
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="ar">العربية</button>
+        </div>
+
+        <!-- Welcome Screen -->
+        <div class="screen active" id="welcome-screen">
+            <div class="welcome-content">
+                <h1 data-translate="welcome_title">🎉 Friendship Game</h1>
+                <p data-translate="welcome_subtitle">Test how well you know your friends!</p>
+                <button class="btn primary" id="start-game" data-translate="start_game">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Player Setup Screen -->
+        <div class="screen" id="setup-screen">
+            <div class="setup-content">
+                <h2 data-translate="setup_title">Game Setup</h2>
+                
+                <div class="input-group">
+                    <label data-translate="num_players">Number of Players:</label>
+                    <select id="player-count">
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                    </select>
+                </div>
+
+                <div class="players-container" id="players-container">
+                    <!-- Player inputs will be generated here -->
+                </div>
+
+                <div class="setup-buttons">
+                    <button class="btn secondary" id="back-to-welcome" data-translate="back">Back</button>
+                    <button class="btn primary" id="start-playing" data-translate="start_playing">Start Playing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div class="screen" id="game-screen">
+            <div class="game-content">
+                <div class="game-header">
+                    <div class="round-info">
+                        <span data-translate="round">Round</span> <span id="current-round">1</span> / 10
+                    </div>
+                    <div class="score">
+                        <span data-translate="score">Score:</span> <span id="current-score">0</span>
+                    </div>
+                </div>
+
+                <div class="current-player">
+                    <h3 data-translate="current_player">Current Player:</h3>
+                    <div class="player-name" id="current-player-name">Player 1</div>
+                </div>
+
+                <div class="question-container">
+                    <div class="question" id="current-question">
+                        Who is most likely to become famous?
+                    </div>
+                </div>
+
+                <div class="players-grid" id="players-grid">
+                    <!-- Player buttons will be generated here -->
+                </div>
+
+                <div class="game-buttons">
+                    <button class="btn secondary" id="skip-question" data-translate="skip">Skip</button>
+                    <button class="btn danger" id="end-game" data-translate="end_game">End Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="screen" id="results-screen">
+            <div class="results-content">
+                <h2 data-translate="game_over">🎊 Game Over!</h2>
+                
+                <div class="final-score">
+                    <h3 data-translate="final_score">Final Score:</h3>
+                    <div class="score-display" id="final-score">0 / 10</div>
+                </div>
+
+                <div class="results-summary" id="results-summary">
+                    <!-- Results will be displayed here -->
+                </div>
+
+                <div class="results-buttons">
+                    <button class="btn primary" id="play-again" data-translate="play_again">Play Again</button>
+                    <button class="btn secondary" id="new-game" data-translate="new_game">New Game</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
