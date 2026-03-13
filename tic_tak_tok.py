@@ -33,7 +33,7 @@ def game ( ):
         print('it is time for you to play,'+ turn + 'pick a place to move to')
 
 
-        move = input
+        move = input ()
         
 
         if theboard[move]  ==  ' ':
@@ -108,19 +108,34 @@ def game ( ):
                 print('\nGAME OVER.\n')
                 print ('****' + 'player1 WON')
                 break
+        
 
 
-            
+        if count ==9:
+            print("\nGAME OVER.\n")
+            print('It is a tie,try again')
+
+        
+
+        if turn =='X':
+            turn ='O'
+        
+
+        else:
+            turn = 'X'
 
 
 
+    restart = input('Do you want to play Again?(y/n)')
+    if restart == 'y' or restart == 'Y':
+        for key in board_keys:
+            theboard[key] =' '
+        
 
 
+        game ()
 
 
+if __name__ == '__main__':
 
-
-
-            
-
-
+    game ()
