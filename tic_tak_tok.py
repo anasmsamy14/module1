@@ -132,6 +132,8 @@ def game ( ):
             theboard[key] =' '
         
 
+        
+
 
         game ()
 
