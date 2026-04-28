@@ -31,12 +31,12 @@ class Tesla:
         print("Tesla is made in USA")
 
 
-# Create objects
+
 b = BMW()
 f = Ferrari()
 t = Tesla()
 
-# Call methods manually (no loop)
+
 b.fuel_type()
 b.max_speed()
 b.where_made()
