@@ -30,12 +30,36 @@ class Tesla:
     def where_made(self):
         print("Tesla is made in USA")
 
+class rolls_royce:
+    def fuel_type(self):
+        print("rolls_royce uses Petrol")
 
+    def max_speed(self):
+        print("rolls_royce max speed is 250 km/h")
+
+    def where_made(self):
+        print("rolls_royce is made in UK")
+
+class batman:
+    def fuel_type(self):
+        print("batman uses Batmobile fuel")
+
+    def max_speed(self):
+        print("batman max speed is 400 km/h")
+
+    def where_made(self):
+        print("batman is made in Gotham City")
+
+class mg5
+
+)   
  
 b = BMW()
 f = Ferrari()
 t = Tesla()
-
+r = rolls_royce()
+ba = batman()
+c = rolls_royce()
 
 b.fuel_type()
 b.max_speed()
@@ -52,3 +76,11 @@ print()
 t.fuel_type()
 t.max_speed()
 t.where_made()
+
+c.fuel_type()
+c.max_speed()
+c.where_made()
+
+ba.fuel_type()
+ba.max_speed() 
+ba.where_made()
