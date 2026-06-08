@@ -20,7 +20,7 @@ white = (255,255,255)
 class Sprite (pygame.sprite.Sprite):
     def __init__(self,color,height,width):
         super().__init__()
-        self.image = pygame.surface([height,width])
+        self.image = pygame.Surface([width,height])
         self.image.fill(color)
         self.rect = self.image.get_rect()
         self.velocity= [random.choice([-1,1]),random.choice([-1,1])]
@@ -48,8 +48,42 @@ def change_background_color():
     global bg_color
     bg_color = random.choice([light_blue,blue,dark_blue])
 
+all_sprites_list = pygame.sprite.Group()
+
+sp1 = Sprite(white,20,30)
+sp1.rect.x = random.randint(0,480)
+sp1.rect.y = random.randint(0,370)
+
+all_sprites_list.add(sp1)
 
 
+screen = pygame.display.set_mode((500,400))
+pygame.display.set_caption("Colorful Bounce")   
+bg_color = light_blue
+screen.fill(bg_color)
+
+exit = False
+clock = pygame.time.Clock()
+
+
+while not exit:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            exit = True
+        elif event.type == sprite_color_change_event:
+            sp1.change_color()
+        elif event.type == background_color_change_event:
+            change_background_color()
+
+    all_sprites_list.update()
+    screen.fill(bg_color)
+    all_sprites_list.draw(screen)
+
+
+    pygame.display.flip()
+    clock.tick(241)
+
+pygame.quit()
 
 
 
