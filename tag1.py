@@ -66,17 +66,19 @@ while running:
         sprite1.move(x_change, y_change)
 
         if sprite1.rect.colliderect(sprite2.rect):
-            all_sprites.remove(sprite2)
+            sprite2.rect.x = random.randint(0, screen_width - sprite2.rect.width)
+            sprite2.rect.y = random.randint(0, screen_height - sprite2.rect.height)
             won = True
-    
+            phase2_start_time = pygame.time.get_ticks()
     screen.blit(baground_image, (0, 0))
     all_sprites.draw(screen)
 
     if won:
-        win_text = font.render('You win!', True, pygame.Color("green"))
+        win_text = font.render('PHASE 2', True, pygame.Color("green"))
         
         screen.blit(win_text, ((screen_width - win_text.get_width()) // 2, (screen_height - win_text.get_height()) // 2))
-
+        if pygame.time.get_ticks() - phase2_start_time > 2000:  
+            won = False
     pygame.display.flip()
     clock.tick(60)
 
