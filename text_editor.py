@@ -10,8 +10,16 @@ window.columnconfigure(1, weight=1, minsize=800)
 
 def open_file():
     filepath = askopenfilename(
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        filetypes = [
+            ("All Allowed Files", "*.png;*.jpg;*.jpeg;*.py;*.txt"),  # Both types together
+            ("Code & Text Files", "*.py;*.txt"),                     # Just code and text
+            ("Image Files", "*.png;*.jpg;*.jpeg"),                   # Just images
+            ("Python Files", "*.py"),                                # Python files only
+            ("Text Files", "*.txt"),                                 # Text files only
+            ("All Files", "*.*")                                     # Any file type
+    ]
     )
+
     if not filepath:
         return
     text_edit.delete(1.0, END)
@@ -24,8 +32,8 @@ def open_file():
 
 def save_file():
     filepath = asksaveasfilename(
-        defaultextension="txt",
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
+        defaultextension="py",
+        filetypes=[("Python Files", "*.py"), ("Text Files", "*.txt"), ("All Files", "*.*")],
     )
     if not filepath:
         return
