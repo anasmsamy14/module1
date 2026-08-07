@@ -121,6 +121,6 @@ class ResturantOrderManagement:
 if __name__ == "__main__":
 
     root = tk.Tk()
-    App = ResturantOrderManagement(root)
+    app = ResturantOrderManagement(root)
     root.geometry("800x600")
     root.mainloop()
