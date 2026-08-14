@@ -105,7 +105,7 @@ ttk.Label(
     text="Currency:",
     style="Heading.TLabel"
 ).grid(row=0, column=0, padx=10)
-
+9
 currency = tk.StringVar(value="EGP")
 
 currency_box = ttk.Combobox(
