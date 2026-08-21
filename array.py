@@ -9,7 +9,6 @@ print(arr)
 
 
 odd_replaced = arr.copy()
-odd_replaced[odd_replaced % 2 == 1] = -1
 
 print("\nOdd numbers replaced with -1:")
 print(odd_replaced)
